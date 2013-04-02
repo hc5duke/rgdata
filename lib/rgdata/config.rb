@@ -6,7 +6,7 @@ class RGData::Config
   ]
 
   configurations.each do |configuration|
-    define_method configuration, do |*new_value|
+    define_method configuration do |*new_value|
       instance_variable = :"@#{configuration}"
       if new_value.any?
         instance_variable_set instance_variable, new_value.first
